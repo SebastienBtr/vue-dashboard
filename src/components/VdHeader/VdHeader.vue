@@ -1,6 +1,8 @@
 <template>
   <div class="vd-header-container">
-    <div class="vd-header"></div>
+    <div class="vd-header">
+      <button class="button" v-if="showMenuButton" v-on:click="openMenu">|||</button>
+    </div>
   </div>
 </template>
 
@@ -8,11 +10,18 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class VdHeader extends Vue {}
+export default class VdHeader extends Vue {
+  @Prop({ default: false }) private showMenuButton!: boolean;
+
+  openMenu() {
+    this.$emit('open-menu');
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .vd-header-container {
+  z-index: 50;
   position: fixed;
   top: 0;
   width: -webkit-calc(100% - 300px);
@@ -24,7 +33,12 @@ export default class VdHeader extends Vue {}
 .vd-header {
   height: 4rem;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 1200px) {
+  .vd-header-container {
+    width: 100%;
+  }
 }
 </style>
