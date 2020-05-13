@@ -1,7 +1,11 @@
 <template>
   <div class="vd-header-container">
     <div class="vd-header">
-      <button class="button" v-if="showMenuButton" v-on:click="openMenu">|||</button>
+      <button
+        class="button is-white menu-btn is-large"
+        v-if="showMenuButton"
+        v-on:click="openMenu"
+      >|||</button>
     </div>
   </div>
 </template>
@@ -20,6 +24,11 @@ export default class VdHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.menu-btn {
+  background-color: transparent !important;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
 .vd-header-container {
   z-index: 50;
   position: fixed;
