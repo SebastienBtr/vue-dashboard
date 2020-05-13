@@ -26,6 +26,14 @@ import VdSidebar from '../VdSidebar/VdSidebar.vue';
 export default class VdDashboard extends Vue {
   @Prop() private content!: string;
 
+  @Prop({ default: '50px' }) private sidebarHeaderHeight!: string;
+
+  @Prop() private headerItems!: string;
+
+  @Prop() private sidebarHeader!: string;
+
+  @Prop() private sidebarItems!: string;
+
   sidebarIsVisible = true;
 
   isCollapse = false;
@@ -68,10 +76,10 @@ export default class VdDashboard extends Vue {
   -webkit-transition: all 0.25s;
 }
 .vd-content {
-  height: 500vh; /* test */
   padding: 7rem 2rem;
   background-color: #f8f8f8;
   position: absolute;
+  min-height: 100%;
   width: calc(100% - 300px);
   z-index: 10;
 }

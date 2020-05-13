@@ -6,6 +6,7 @@
         v-if="showMenuButton"
         v-on:click="openMenu"
       >|||</button>
+      <component :is="items" class="is-pulled-right"></component>
     </div>
   </div>
 </template>
@@ -16,6 +17,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class VdHeader extends Vue {
   @Prop({ default: false }) private showMenuButton!: boolean;
+
+  @Prop() private items!: string;
 
   openMenu() {
     this.$emit('open-menu');
