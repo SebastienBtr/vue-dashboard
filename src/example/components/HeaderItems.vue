@@ -22,14 +22,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({})
-export default class HeaderItems extends Vue {}
-</script>
-
-<style lang="scss">
+<style>
 .column {
   display: flex !important;
   align-items: center !important;

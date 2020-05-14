@@ -43,14 +43,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({})
-export default class SidebarItems extends Vue {}
-</script>
-
-<style lang="scss">
+<style>
 .router-link-exact-active > button {
   background-color: #44b783 !important;
   color: white !important;

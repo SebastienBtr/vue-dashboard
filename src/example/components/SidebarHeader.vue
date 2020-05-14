@@ -5,14 +5,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({})
-export default class SidebarHeader extends Vue {}
-</script>
-
-<style lang="scss">
+<style>
 .header {
   text-align: center;
   padding: 1rem;
