@@ -4,9 +4,16 @@
       :isVisible="sidebarIsVisible"
       :showCloseButton="isCollapse"
       @close-sidebar="closeSidebar"
+      :header="sidebarHeader"
+      :items="sidebarItems"
+      :headerHeight="sidebarHeaderHeight"
     ></vd-sidebar>
     <div class="vd-main">
-      <vd-header :showMenuButton="isCollapse" @open-menu="openMenu"></vd-header>
+      <vd-header
+        :showMenuButton="isCollapse"
+        @open-menu="openMenu"
+        :items="headerItems"
+      ></vd-header>
       <component :is="content" class="vd-content"></component>
     </div>
   </div>

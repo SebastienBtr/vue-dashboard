@@ -6,7 +6,7 @@
   >
     <div class="vd-sidebar-header" :class="{hidden: !isVisible}">
       <button
-        class="button is-white close-btn is-large is-pulled-right"
+        class="button is-white close-btn is-large"
         v-if="showCloseButton"
         v-on:click="closeSidebar"
       >X</button>
@@ -35,7 +35,7 @@ export default class VdSidebar extends Vue {
 
   get mapCssProps() {
     const result: Record<string, string> = {};
-    result['--vd-header-width'] = this.headerHeight;
+    result['--vd-header-height'] = this.headerHeight;
     return result;
   }
 
@@ -57,13 +57,17 @@ export default class VdSidebar extends Vue {
   background-color: white;
   overflow-y: scroll;
   transition: all 0.5s;
-  -webkit-transition: all 0.25s;
+  -webkit-transition: all 0.5s;
 }
 .vd-sidebar-container.hidden {
   left: -300px;
   opacity: 0;
 }
 .close-btn {
+  position: absolute;
+  z-index: 200;
+  right: 0;
+  top: 0;
   background-color: transparent !important;
 }
 .vd-sidebar-header {
@@ -73,14 +77,17 @@ export default class VdSidebar extends Vue {
   top: 0;
   right: 0;
   width: 300px;
-  height: var(--vd-header-width, 50px);
+  height: var(--vd-header-height, 50px);
+  overflow-y: scroll;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 .vd-sidebar-header.hidden {
   left: -300px;
   opacity: 0;
 }
 .vd-sidebar-content {
-  padding: var(--vd-header-width, 50px) 1.5rem 0rem 1.5rem;
+  padding: var(--vd-header-height, 50px) 1rem 0rem 1rem;
   width: 300px;
 }
 </style>

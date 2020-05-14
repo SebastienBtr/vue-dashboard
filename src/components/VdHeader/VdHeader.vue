@@ -6,7 +6,7 @@
         v-if="showMenuButton"
         v-on:click="openMenu"
       >|||</button>
-      <component :is="items" class="is-pulled-right"></component>
+      <component :is="items" class="is-pulled-right items"></component>
     </div>
   </div>
 </template>
@@ -27,6 +27,11 @@ export default class VdHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.items {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .menu-btn {
   background-color: transparent !important;
   transform: rotate(90deg);

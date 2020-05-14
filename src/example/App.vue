@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <vd-dashboard content="router-view"></vd-dashboard>
+    <vd-dashboard
+      content="router-view"
+      sidebarHeaderHeight="150px"
+      headerItems="header-items"
+      sidebarHeader="sidebar-header"
+      sidebarItems="sidebar-items"
+    ></vd-dashboard>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import VdDashboard from './components/VdDashboard/VdDashboard.vue';
+import VdDashboard from '../components/VdDashboard/VdDashboard.vue';
 
 @Component({
   components: {
