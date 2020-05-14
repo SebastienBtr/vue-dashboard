@@ -1,6 +1,6 @@
 # Vue Dashboard
 
-![AppVeyor](https://img.shields.io/appveyor/build/SebastienBtr/vue-dashboard)
+![CircleCI](https://img.shields.io/circleci/build/github/SebastienBtr/vue-dashboard?token=81ba23bd9f35863920f382d5e87256a8a8daf3a0)
 ![GitHub](https://img.shields.io/github/license/SebastienBtr/vue-dashboard)
 ![npm](https://img.shields.io/npm/v/vue-dashboard-vd)
 
