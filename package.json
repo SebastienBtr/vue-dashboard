@@ -1,13 +1,19 @@
 {
-  "name": "vue-dashboard",
+  "name": "vue-dashboard-vd",
   "version": "0.1.0",
-  "private": true,
+  "description": "Vue.js Dashboard component",
+  "author": "Sébastien Bouttier",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name vue-dashboard-vd src/index.ts"
   },
+  "main": "./dist/vue-dashboard-vd.common.js",
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
     "@mdi/font": "^5.2.45",
     "bulma": "^0.8.2",
@@ -18,18 +24,15 @@
     "vue-router": "^3.1.6"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-plugin-typescript": "~4.3.0",
-    "@vue/cli-plugin-unit-jest": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "1.0.0-beta.31",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
