@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  vue-dashboard:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout
+      - node/install:
+          install-npm: false
+          install-yarn: true
+          node-version: latest
+      - node/install-packages:
+          cache-key: yarn.lock
+          pkg-manager: yarn
+      - run: yarn lint
+      - run: yarn build-bundle
+orbs:
+  node: circleci/node@2.0.3
+workflows:
+  build:
+    jobs:
+      - vue-dashboard
