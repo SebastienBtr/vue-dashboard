@@ -6,8 +6,6 @@
 
 A simple, lightweight and responsive layout for your next Vue.js dashboard
 
-Example:
-
 ![](example.png)
 
 ## Quick start
@@ -50,16 +48,17 @@ Vue.use(VueDashboard);
 
 **main.ts**
 ``` javascript
-import HeaderItems from '@components/HeaderItems.vue';
-import SidebarHeader from '@components/SidebarHeader.vue';
-import SidebarItems from '@components/SidebarItems.vue';
+import HeaderItems from './components/HeaderItems.vue';
+import SidebarHeader from './components/SidebarHeader.vue';
+import SidebarItems from './components/SidebarItems.vue';
 
 Vue.component('header-items', HeaderItems);
 Vue.component('sidebar-items', SidebarItems);
 Vue.component('sidebar-header', SidebarHeader);
 ```
 
-Examples for these components can be found [here](https://github.com/SebastienBtr/vue-dashboard/blob/master/src/example/components).
+Examples for these components can be found [here](https://github.com/SebastienBtr/vue-dashboard/blob/master/src/example/components).  
+It uses [Bulma](https://bulma.io/) as a css framework.
 
 ## Found this project useful? ❤️
 If you found this project useful, then please consider giving it a ⭐️ on Github and sharing it with your friends via social media.
