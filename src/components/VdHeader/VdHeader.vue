@@ -4,7 +4,7 @@
       <button
         class="button is-white menu-btn is-large"
         v-if="showMenuButton"
-        v-on:click="openMenu"
+        @click="openMenu"
       >|||</button>
       <component :is="items" class="is-pulled-right items"></component>
     </div>

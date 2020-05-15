@@ -8,7 +8,7 @@
       <button
         class="button is-white close-btn is-large"
         v-if="showCloseButton"
-        v-on:click="closeSidebar"
+        @click="closeSidebar"
       >X</button>
       <component :is="header"></component>
     </div>
