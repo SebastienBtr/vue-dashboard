@@ -61,7 +61,7 @@ Examples for these components can be found [here](https://github.com/SebastienBt
 It uses [Bulma](https://bulma.io/) as a css framework.
 
 ## Found this project useful? ❤️
-If you found this project useful, then please consider giving it a ⭐️ on Github and sharing it with your friends via social media.
+If you found this project useful, then please consider giving it a [⭐️ on Github](https://github.com/SebastienBtr/vue-dashboard) and sharing it with your friends via social media.
 
 ## Issues and feedback 💭
 If you have any suggestion for including a feature or if something doesn't work, feel free to open a Github [issue](https://github.com/SebastienBtr/vue-dashboard/issues) for us to have a discussion on it.
