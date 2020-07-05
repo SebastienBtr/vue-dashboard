@@ -38,7 +38,7 @@ export default class VdHeader extends Vue {
   -webkit-transform: rotate(90deg);
 }
 .vd-header-container {
-  z-index: 50;
+  z-index: 30;
   position: fixed;
   top: 0;
   width: -webkit-calc(100% - 300px);

@@ -88,7 +88,6 @@ export default class VdDashboard extends Vue {
   position: absolute;
   min-height: 100%;
   width: calc(100% - 300px);
-  z-index: 10;
 }
 @media screen and (max-width: 1200px) {
   .vd-main {

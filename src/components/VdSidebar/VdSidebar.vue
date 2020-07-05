@@ -47,7 +47,7 @@ export default class VdSidebar extends Vue {
 
 <style lang="scss" scoped>
 .vd-sidebar-container {
-  z-index: 100;
+  z-index: 40;
   position: fixed;
   left: 0;
   top: 0;
@@ -71,7 +71,7 @@ export default class VdSidebar extends Vue {
   background-color: transparent !important;
 }
 .vd-sidebar-header {
-  z-index: 200;
+  z-index: 45;
   position: fixed;
   left: 0;
   top: 0;
