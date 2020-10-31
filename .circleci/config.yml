@@ -13,7 +13,7 @@ jobs:
           cache-key: yarn.lock
           pkg-manager: yarn
       - run: yarn lint
-      - run: yarn build-bundle
+      - run: yarn build
 orbs:
   node: circleci/node@2.0.3
 workflows:
