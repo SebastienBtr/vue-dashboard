@@ -55,7 +55,8 @@ export default class VdSidebar extends Vue {
   width: 300px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
   background-color: white;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
@@ -78,7 +79,7 @@ export default class VdSidebar extends Vue {
   right: 0;
   width: 300px;
   height: var(--vd-header-height, 50px);
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }

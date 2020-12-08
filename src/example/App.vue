@@ -2,7 +2,7 @@
   <div id="app">
     <vd-dashboard
       content="router-view"
-      sidebarHeaderHeight="150px"
+      sidebarHeaderHeight="160px"
       headerItems="header-items"
       sidebarHeader="sidebar-header"
       sidebarItems="sidebar-items"
