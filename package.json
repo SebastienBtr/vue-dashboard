@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-dashboard-vd src/index.ts",
+    "build": "vue-cli-service build --target lib --name vue-dashboard-vd src/index.ts && rm ./dist/demo.html",
     "lint": "vue-cli-service lint"
   },
   "main": "./dist/vue-dashboard-vd.common.js",
