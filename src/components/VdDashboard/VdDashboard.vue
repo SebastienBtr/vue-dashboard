@@ -14,7 +14,9 @@
         @open-menu="openMenu"
         :items="headerItems"
       ></vd-header>
-      <component :is="content" class="vd-content"></component>
+      <div class="vd-content" @click="pageClick">
+        <component :is="content"></component>
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +74,12 @@ export default class VdDashboard extends Vue {
 
   closeSidebar() {
     this.sidebarIsVisible = false;
+  }
+
+  pageClick() {
+    if (this.isCollapse && this.sidebarIsVisible) {
+      this.closeSidebar();
+    }
   }
 }
 </script>
