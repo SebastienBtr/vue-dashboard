@@ -22,7 +22,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import {
+  Component, Prop, Watch, Vue,
+} from 'vue-property-decorator';
 import VdHeader from '../VdHeader/VdHeader.vue';
 import VdSidebar from '../VdSidebar/VdSidebar.vue';
 
@@ -56,6 +58,11 @@ export default class VdDashboard extends Vue {
 
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize);
+  }
+
+  @Watch('$route')
+  onRouteChange() {
+    this.pageClick();
   }
 
   onResize() {
