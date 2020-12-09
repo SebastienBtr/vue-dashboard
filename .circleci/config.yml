@@ -13,7 +13,6 @@ jobs:
           node-version: latest
       - node/install-packages:
           cache-key: yarn.lock
-          app-dir: ~/vue-dashboard
           pkg-manager: yarn
       - run: yarn lint
       - run: yarn build
