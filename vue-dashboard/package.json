@@ -1,0 +1,65 @@
+{
+  "name": "vue-dashboard-vd",
+  "version": "1.0.8",
+  "description": "Vue.js Dashboard component",
+  "author": "Sébastien Bouttier",
+  "license": "MIT",
+  "repository": "https://github.com/SebastienBtr/vue-dashboard",
+  "keywords": [
+    "vue",
+    "dashboard",
+    "vue.js",
+    "vue-dashboard",
+    "admin"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-dashboard-vd src/index.ts && rm ./dist/demo.html",
+    "lint": "vue-cli-service lint"
+  },
+  "main": "./dist/vue-dashboard-vd.common.js",
+  "files": [
+    "dist/*"
+  ],
+  "sideEffects": [
+    "*.vue",
+    "*.css"
+  ],
+  "dependencies": {
+    "@mdi/font": "^5.2.45",
+    "bulma": "^0.8.2",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.1",
+    "vue-router": "^3.1.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-plugin-router": "~4.3.0",
+    "@vue/cli-plugin-typescript": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.8.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
