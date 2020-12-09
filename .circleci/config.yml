@@ -1,16 +1,19 @@
 version: 2.1
 jobs:
   vue-dashboard:
+    working_directory: ~/vue-dashboard/vue-dashboard
     docker:
       - image: "cimg/base:stable"
     steps:
-      - checkout
+      - checkout:
+          path: ~/frontend
       - node/install:
           install-npm: false
           install-yarn: true
           node-version: latest
       - node/install-packages:
           cache-key: yarn.lock
+          app-dir: ~/vue-dashboard/vue-dashboard
           pkg-manager: yarn
       - run: yarn lint
       - run: yarn build
