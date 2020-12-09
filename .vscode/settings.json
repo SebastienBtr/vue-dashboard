@@ -1,0 +1,6 @@
+{
+  "eslint.workingDirectories": [
+    "./examples/vue2-example",
+    "./vue-dashboard",
+  ]
+}

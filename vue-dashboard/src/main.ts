@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import App from './example/App.vue';
-import router from './example/router';
-import HeaderItems from './example/components/HeaderItems.vue';
-import SidebarHeader from './example/components/SidebarHeader.vue';
-import SidebarItems from './example/components/SidebarItems.vue';
+import App from './app-test/App.vue';
+import router from './app-test/router';
+import HeaderItems from './app-test/components/HeaderItems.vue';
+import SidebarHeader from './app-test/components/SidebarHeader.vue';
+import SidebarItems from './app-test/components/SidebarItems.vue';
 import 'bulma/css/bulma.min.css';
 import '@mdi/font/css/materialdesignicons.min.css';
 

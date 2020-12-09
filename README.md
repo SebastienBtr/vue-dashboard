@@ -57,8 +57,10 @@ Vue.component('sidebar-items', SidebarItems);
 Vue.component('sidebar-header', SidebarHeader);
 ```
 
-Examples for these components can be found [here](https://github.com/SebastienBtr/vue-dashboard/blob/master/src/example/components).  
+Examples for these components can be found [here](https://github.com/SebastienBtr/vue-dashboard/blob/master/examples/vue2-example/src/components).  
 It uses [Bulma](https://bulma.io/) as a css framework.
+
+Complete examples can be found in `examples` folder.
 
 ## Found this project useful? ❤️
 If you found this project useful, then please consider giving it a [⭐️ on Github](https://github.com/SebastienBtr/vue-dashboard) and sharing it with your friends via social media.
