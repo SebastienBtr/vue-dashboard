@@ -10,7 +10,7 @@ jobs:
       - node/install:
           install-npm: false
           install-yarn: true
-          node-version: 13
+          node-version: "13"
       - node/install-packages:
           cache-key: yarn.lock
           app-dir: ~/vue-dashboard/vue-dashboard
