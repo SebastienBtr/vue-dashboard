@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   vue-dashboard:
-    working_directory: ~/vue-dashboard
+    working_directory: ~/vue-dashboard/vue-dashboard
     docker:
       - image: "cimg/base:stable"
     steps:
@@ -13,12 +13,13 @@ jobs:
           node-version: latest
       - node/install-packages:
           cache-key: yarn.lock
+          app-dir: ~/vue-dashboard/vue-dashboard
           pkg-manager: yarn
       - run: yarn lint
       - run: yarn build
 orbs:
   node: circleci/node@2.0.3
 workflows:
-  build:
+  vue-dashboard:
     jobs:
       - vue-dashboard
