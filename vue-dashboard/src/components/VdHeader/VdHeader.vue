@@ -20,9 +20,12 @@ export default class VdHeader extends Vue {
 
   @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
 
+  @Prop({ default: 'white' }) private background!: string;
+
   get mapCssProps() {
     const result: Record<string, string> = {};
     result['--vd-page-background'] = this.pageBackground;
+    result['--vd-header-background'] = this.background;
     return result;
   }
 
@@ -61,7 +64,7 @@ export default class VdHeader extends Vue {
 }
 .vd-header {
   height: 4rem;
-  background-color: white;
+  background-color: var(--vd-header-background, white);
   border-radius: 10px;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 }

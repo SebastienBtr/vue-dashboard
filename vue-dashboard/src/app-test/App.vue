@@ -7,6 +7,8 @@
       sidebarHeader="sidebar-header"
       sidebarItems="sidebar-items"
       pageBackground="#f8f8f8"
+      headerBackground="white"
+      sidebarBackground="white"
     ></vd-dashboard>
   </div>
 </template>

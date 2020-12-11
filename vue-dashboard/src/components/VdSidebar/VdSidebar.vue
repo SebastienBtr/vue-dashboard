@@ -33,9 +33,12 @@ export default class VdSidebar extends Vue {
 
   @Prop() private items!: string;
 
+  @Prop({ default: 'white' }) private background!: string;
+
   get mapCssProps() {
     const result: Record<string, string> = {};
     result['--vd-header-height'] = this.headerHeight;
+    result['--vd-sidebar-background'] = this.background;
     return result;
   }
 
@@ -54,7 +57,7 @@ export default class VdSidebar extends Vue {
   bottom: 0;
   width: 300px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-  background-color: white;
+  background-color: var(--vd-sidebar-background, white);
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.5s;

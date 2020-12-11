@@ -7,12 +7,14 @@
       :header="sidebarHeader"
       :items="sidebarItems"
       :headerHeight="sidebarHeaderHeight"
+      :background="sidebarBackground"
     ></vd-sidebar>
     <div class="vd-main">
       <vd-header
         :showMenuButton="isCollapse"
         @open-menu="openMenu"
         :pageBackground="pageBackground"
+        :background="headerBackground"
         :items="headerItems"
       ></vd-header>
       <div class="vd-content" @click="pageClick">
@@ -47,6 +49,10 @@ export default class VdDashboard extends Vue {
   @Prop() private sidebarItems!: string;
 
   @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
+
+  @Prop({ default: 'white' }) private headerBackground!: string;
+
+  @Prop({ default: 'white' }) private sidebarBackground!: string;
 
   sidebarIsVisible = true;
 
