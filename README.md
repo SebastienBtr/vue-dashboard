@@ -23,7 +23,6 @@ npm install vue-dashboard-vd
 ``` javascript
 import Vue from 'vue';
 import VueDashboard from 'vue-dashboard-vd';
-import 'vue-dashboard-vd/dist/vue-dashboard-vd.css';
 
 Vue.use(VueDashboard);
 ```
