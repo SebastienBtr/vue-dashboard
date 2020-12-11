@@ -98,10 +98,12 @@ export default class VdDashboard extends Vue {
   -webkit-transition: all 0.25s;
 }
 .vd-content {
-  padding: 7rem 2rem;
+  padding: 6rem 1.5rem 0rem 1.5rem;
   background-color: #f8f8f8;
   position: absolute;
   min-height: 100%;
+  width: -webkit-calc(100% - 300px);
+  width: -moz-calc(100% - 300px);
   width: calc(100% - 300px);
 }
 @media screen and (max-width: 1200px) {
