@@ -25,16 +25,14 @@
     "*.vue",
     "*.css"
   ],
-  "dependencies": {
-    "@mdi/font": "^5.2.45",
-    "bulma": "^0.8.2",
+  "devDependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.1",
-    "vue-router": "^3.1.6"
-  },
-  "devDependencies": {
+    "vue-router": "^3.1.6",
+    "@mdi/font": "^5.2.45",
+    "bulma": "^0.8.2",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "@vue/cli-plugin-babel": "~4.3.0",
