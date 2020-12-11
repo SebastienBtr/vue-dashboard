@@ -6,6 +6,7 @@
       headerItems="header-items"
       sidebarHeader="sidebar-header"
       sidebarItems="sidebar-items"
+      pageBackground="#f8f8f8"
     ></vd-dashboard>
   </div>
 </template>

@@ -1,11 +1,9 @@
 <template>
-  <div class="vd-header-container">
+  <div class="vd-header-container" :style="mapCssProps">
     <div class="vd-header">
-      <button
-        class="menu-btn"
-        v-if="showMenuButton"
-        @click="openMenu"
-      >|||</button>
+      <button class="menu-btn" v-if="showMenuButton" @click="openMenu">
+        |||
+      </button>
       <component :is="items" class="items"></component>
     </div>
   </div>
@@ -19,6 +17,14 @@ export default class VdHeader extends Vue {
   @Prop({ default: false }) private showMenuButton!: boolean;
 
   @Prop() private items!: string;
+
+  @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
+
+  get mapCssProps() {
+    const result: Record<string, string> = {};
+    result['--vd-page-background'] = this.pageBackground;
+    return result;
+  }
 
   openMenu() {
     this.$emit('open-menu');
@@ -50,7 +56,7 @@ export default class VdHeader extends Vue {
   width: -webkit-calc(100% - 300px);
   width: -moz-calc(100% - 300px);
   width: calc(100% - 300px);
-  background-color: #f8f8f8;
+  background-color: var(--vd-page-background, white);
   padding: 1.5rem 1.5rem 0rem 1.5rem;
 }
 .vd-header {

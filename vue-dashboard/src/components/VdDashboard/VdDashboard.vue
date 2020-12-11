@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="mapCssProps">
     <vd-sidebar
       :isVisible="sidebarIsVisible"
       :showCloseButton="isCollapse"
@@ -12,6 +12,7 @@
       <vd-header
         :showMenuButton="isCollapse"
         @open-menu="openMenu"
+        :pageBackground="pageBackground"
         :items="headerItems"
       ></vd-header>
       <div class="vd-content" @click="pageClick">
@@ -44,6 +45,8 @@ export default class VdDashboard extends Vue {
   @Prop() private sidebarHeader!: string;
 
   @Prop() private sidebarItems!: string;
+
+  @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
 
   sidebarIsVisible = true;
 
@@ -88,6 +91,12 @@ export default class VdDashboard extends Vue {
       this.closeSidebar();
     }
   }
+
+  get mapCssProps() {
+    const result: Record<string, string> = {};
+    result['--vd-page-background'] = this.pageBackground;
+    return result;
+  }
 }
 </script>
 
@@ -99,7 +108,7 @@ export default class VdDashboard extends Vue {
 }
 .vd-content {
   padding: 6rem 1.5rem 0rem 1.5rem;
-  background-color: #f8f8f8;
+  background-color: var(--vd-page-background, white);
   position: absolute;
   min-height: 100%;
   width: -webkit-calc(100% - 300px);
