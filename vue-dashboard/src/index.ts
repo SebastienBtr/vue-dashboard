@@ -1,7 +1,6 @@
 import { VueConstructor } from 'vue';
 import * as components from './components';
 import { use } from './utils/plugin';
-import 'bulma/css/bulma.min.css';
 
 const VueDashboard = {
   install(Vue: VueConstructor<Vue>) {
