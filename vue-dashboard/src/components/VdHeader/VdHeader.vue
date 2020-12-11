@@ -2,11 +2,11 @@
   <div class="vd-header-container">
     <div class="vd-header">
       <button
-        class="button is-white menu-btn is-large"
+        class="menu-btn"
         v-if="showMenuButton"
         @click="openMenu"
       >|||</button>
-      <component :is="items" class="is-pulled-right items"></component>
+      <component :is="items" class="items"></component>
     </div>
   </div>
 </template>
@@ -36,6 +36,12 @@ export default class VdHeader extends Vue {
   background-color: transparent !important;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  float: left;
+  margin-left: 1.5rem;
 }
 .vd-header-container {
   z-index: 30;

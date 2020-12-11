@@ -6,7 +6,7 @@
   >
     <div class="vd-sidebar-header" :class="{hidden: !isVisible}">
       <button
-        class="button is-white close-btn is-large"
+        class="close-btn"
         v-if="showCloseButton"
         @click="closeSidebar"
       >X</button>
@@ -67,9 +67,12 @@ export default class VdSidebar extends Vue {
 .close-btn {
   position: absolute;
   z-index: 200;
-  right: 0;
+  right: 10px;
   top: 0;
   background-color: transparent !important;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
 }
 .vd-sidebar-header {
   z-index: 45;

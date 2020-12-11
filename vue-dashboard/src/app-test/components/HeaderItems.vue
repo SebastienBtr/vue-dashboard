@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="is-pulled-right">
     <div class="columns is-mobile padding-right">
       <div class="column">
         <span class="icon is-medium">
