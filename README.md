@@ -33,28 +33,29 @@ Vue.use(VueDashboard);
 ``` html
 <template>
   <div id="app">
-    <vd-dashboard
-      content="router-view"
-      sidebarHeaderHeight="150px"
-      headerItems="header-items"
-      sidebarHeader="sidebar-header"
-      sidebarItems="sidebar-items"
-    ></vd-dashboard>
+    <VdDashboard
+      pageBackground="#f8f8f8"
+      sidebarHeaderHeight="175px"
+      headerBackground="white"
+      sidebarBackground="white"
+    >
+      <template v-slot:main-content>
+        <router-view />
+      </template>
+      <template v-slot:header-content>
+        <HeaderItems></HeaderItems>
+      </template>
+      <template v-slot:sidebar-header>
+        <SidebarHeader></SidebarHeader>
+      </template>
+      <template v-slot:sidebar-content>
+        <SidebarItems></SidebarItems>
+      </template>
+    </VdDashboard>
   </div>
 </template>
 ```
-`header-items`, `sidebar-header` and `sidebar-items` must be globally available components:
-
-**main.ts**
-``` javascript
-import HeaderItems from './components/HeaderItems.vue';
-import SidebarHeader from './components/SidebarHeader.vue';
-import SidebarItems from './components/SidebarItems.vue';
-
-Vue.component('header-items', HeaderItems);
-Vue.component('sidebar-items', SidebarItems);
-Vue.component('sidebar-header', SidebarHeader);
-```
+`HeaderItems`, `SidebarHeader` and `SidebarItems` are not provided by the library.
 
 Examples for these components can be found [here](https://github.com/SebastienBtr/vue-dashboard/blob/master/examples/vue2-example/src/components).  
 It uses [Bulma](https://bulma.io/) as a css framework.
