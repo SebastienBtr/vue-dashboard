@@ -10,10 +10,10 @@
         v-if="showCloseButton"
         @click="closeSidebar"
       >X</button>
-      <component :is="header"></component>
+      <slot name="header"></slot>
     </div>
     <div class="vd-sidebar-content">
-      <component :is="items"></component>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -28,10 +28,6 @@ export default class VdSidebar extends Vue {
   @Prop({ default: false }) private showCloseButton!: boolean;
 
   @Prop({ default: '50px' }) private headerHeight!: string;
-
-  @Prop() private header!: string;
-
-  @Prop() private items!: string;
 
   @Prop({ default: 'white' }) private background!: string;
 

@@ -4,7 +4,7 @@
       <button class="menu-btn" v-if="showMenuButton" @click="openMenu">
         |||
       </button>
-      <component :is="items" class="items"></component>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -15,8 +15,6 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class VdHeader extends Vue {
   @Prop({ default: false }) private showMenuButton!: boolean;
-
-  @Prop() private items!: string;
 
   @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
 
@@ -36,11 +34,6 @@ export default class VdHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.items {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
 .menu-btn {
   background-color: transparent !important;
   transform: rotate(90deg);

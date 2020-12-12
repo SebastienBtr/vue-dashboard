@@ -27,6 +27,9 @@
   display: flex !important;
   align-items: center !important;
 }
+.columns {
+  margin-top: 0 !important;
+}
 .padding-right {
   padding-right: 15px;
 }

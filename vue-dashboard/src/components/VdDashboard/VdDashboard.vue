@@ -4,21 +4,27 @@
       :isVisible="sidebarIsVisible"
       :showCloseButton="isCollapse"
       @close-sidebar="closeSidebar"
-      :header="sidebarHeader"
-      :items="sidebarItems"
       :headerHeight="sidebarHeaderHeight"
       :background="sidebarBackground"
-    ></vd-sidebar>
+    >
+      <template v-slot:header>
+        <slot name="sidebar-header"></slot>
+      </template>
+      <template v-slot:content>
+        <slot name="sidebar-content"></slot>
+      </template>
+    </vd-sidebar>
     <div class="vd-main">
       <vd-header
         :showMenuButton="isCollapse"
         @open-menu="openMenu"
         :pageBackground="pageBackground"
         :background="headerBackground"
-        :items="headerItems"
-      ></vd-header>
+      >
+        <slot name="header-content"></slot>
+      </vd-header>
       <div class="vd-content" @click="pageClick">
-        <component :is="content"></component>
+        <slot name="main-content"></slot>
       </div>
     </div>
   </div>
@@ -38,15 +44,7 @@ import VdSidebar from '../VdSidebar/VdSidebar.vue';
   },
 })
 export default class VdDashboard extends Vue {
-  @Prop() private content!: string;
-
   @Prop({ default: '50px' }) private sidebarHeaderHeight!: string;
-
-  @Prop() private headerItems!: string;
-
-  @Prop() private sidebarHeader!: string;
-
-  @Prop() private sidebarItems!: string;
 
   @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
 
