@@ -84,6 +84,7 @@ export default class VdSidebar extends Vue {
   overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  background-color: var(--vd-sidebar-background, white);
 }
 .vd-sidebar-header.hidden {
   left: -300px;
