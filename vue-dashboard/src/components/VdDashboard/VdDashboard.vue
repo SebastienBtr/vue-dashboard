@@ -5,6 +5,7 @@
       :showCloseButton="isCollapse"
       @close-sidebar="closeSidebar"
       :headerHeight="sidebarHeaderHeight"
+      :sidebarWidth="sidebarWidth"
       :background="sidebarBackground"
     >
       <template v-slot:header>
@@ -20,6 +21,7 @@
         @open-menu="openMenu"
         :pageBackground="pageBackground"
         :background="headerBackground"
+        :sidebarWidth="sidebarWidth"
       >
         <slot name="header-content"></slot>
       </vd-header>
@@ -45,6 +47,8 @@ import VdSidebar from '../VdSidebar/VdSidebar.vue';
 })
 export default class VdDashboard extends Vue {
   @Prop({ default: '50px' }) private sidebarHeaderHeight!: string;
+
+  @Prop({ default: '300px' }) private sidebarWidth!: string;
 
   @Prop({ default: '#f8f8f8' }) private pageBackground!: string;
 
@@ -99,14 +103,17 @@ export default class VdDashboard extends Vue {
   get mapCssProps() {
     const result: Record<string, string> = {};
     result['--vd-page-background'] = this.pageBackground;
+    result['--vd-sidebar-width'] = this.sidebarWidth;
     return result;
   }
 }
 </script>
 
 <style lang="scss" scoped>
+$sidebarWidth: var(--vd-sidebar-width, 300px);
+
 .vd-main {
-  padding-left: 300px;
+  padding-left: $sidebarWidth;
   transition: all 0.5s;
   -webkit-transition: all 0.25s;
 }
@@ -115,9 +122,9 @@ export default class VdDashboard extends Vue {
   background-color: var(--vd-page-background, white);
   position: absolute;
   min-height: 100%;
-  width: -webkit-calc(100% - 300px);
-  width: -moz-calc(100% - 300px);
-  width: calc(100% - 300px);
+  width: -webkit-calc(100% - $sidebarWidth);
+  width: -moz-calc(100% - $sidebarWidth);
+  width: calc(100% - $sidebarWidth);
 }
 @media screen and (max-width: 1200px) {
   .vd-main {

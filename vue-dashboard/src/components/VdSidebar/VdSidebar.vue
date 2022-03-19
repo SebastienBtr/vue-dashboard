@@ -29,12 +29,15 @@ export default class VdSidebar extends Vue {
 
   @Prop({ default: '50px' }) private headerHeight!: string;
 
+  @Prop({ default: '300px' }) private sidebarWidth!: string;
+
   @Prop({ default: 'white' }) private background!: string;
 
   get mapCssProps() {
     const result: Record<string, string> = {};
     result['--vd-header-height'] = this.headerHeight;
     result['--vd-sidebar-background'] = this.background;
+    result['--vd-sidebar-width'] = this.sidebarWidth;
     return result;
   }
 
@@ -45,13 +48,15 @@ export default class VdSidebar extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$sidebarWidth: var(--vd-sidebar-width, 300px);
+
 .vd-sidebar-container {
   z-index: 40;
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 300px;
+  width: $sidebarWidth;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
   background-color: var(--vd-sidebar-background, white);
   overflow-y: auto;
@@ -60,7 +65,7 @@ export default class VdSidebar extends Vue {
   -webkit-transition: all 0.5s;
 }
 .vd-sidebar-container.hidden {
-  left: -300px;
+  left: -$sidebarWidth;
   opacity: 0;
 }
 .close-btn {
@@ -79,7 +84,7 @@ export default class VdSidebar extends Vue {
   left: 0;
   top: 0;
   right: 0;
-  width: 300px;
+  width: $sidebarWidth;
   height: var(--vd-header-height, 50px);
   overflow-y: auto;
   transition: all 0.5s;
@@ -87,11 +92,11 @@ export default class VdSidebar extends Vue {
   background-color: var(--vd-sidebar-background, white);
 }
 .vd-sidebar-header.hidden {
-  left: -300px;
+  left: -$sidebarWidth;
   opacity: 0;
 }
 .vd-sidebar-content {
   padding: var(--vd-header-height, 50px) 1rem 0rem 1rem;
-  width: 300px;
+  width: $sidebarWidth;
 }
 </style>

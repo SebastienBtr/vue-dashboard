@@ -20,10 +20,13 @@ export default class VdHeader extends Vue {
 
   @Prop({ default: 'white' }) private background!: string;
 
+  @Prop({ default: '300px' }) private sidebarWidth!: string;
+
   get mapCssProps() {
     const result: Record<string, string> = {};
     result['--vd-page-background'] = this.pageBackground;
     result['--vd-header-background'] = this.background;
+    result['--vd-sidebar-width'] = this.sidebarWidth;
     return result;
   }
 
@@ -34,6 +37,8 @@ export default class VdHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$sidebarWidth: var(--vd-sidebar-width, 300px);
+
 .menu-btn {
   background-color: transparent !important;
   transform: rotate(90deg);
@@ -49,9 +54,9 @@ export default class VdHeader extends Vue {
   z-index: 30;
   position: fixed;
   top: 0;
-  width: -webkit-calc(100% - 300px);
-  width: -moz-calc(100% - 300px);
-  width: calc(100% - 300px);
+  width: -webkit-calc(100% - $sidebarWidth);
+  width: -moz-calc(100% - $sidebarWidth);
+  width: calc(100% - $sidebarWidth);
   background-color: var(--vd-page-background, white);
   padding: 1.5rem 1.5rem 0rem 1.5rem;
 }

@@ -36,6 +36,7 @@ Vue.use(VueDashboard);
     <VdDashboard
       pageBackground="#f8f8f8"
       sidebarHeaderHeight="175px"
+      sidebarWidth="300px"
       headerBackground="white"
       sidebarBackground="white"
     >
